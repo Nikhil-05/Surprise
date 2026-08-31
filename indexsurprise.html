@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>12:00 AM — Darloo ❤️</title>
+<style>
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Georgia,"Times New Roman",serif}
+body{background:radial-gradient(circle at 50% 18%,#3d2752,#1b1725 50%,#0c0a10);color:#fff8f3;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.25;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:47px 47px}
+.wrap{max-width:780px;margin:auto;padding:20px 16px 65px;position:relative}
+.hero{text-align:center;padding:48px 8px 25px}.eyebrow{font-size:12px;letter-spacing:5px;opacity:.65}.hero h1{font-size:clamp(54px,14vw,94px);font-weight:400;margin:15px 0 8px}.hero p{font-size:18px;line-height:1.7;margin:0}
+.card{background:#fffaf7;color:#351d39;border-radius:28px;padding:29px 23px;margin:22px 0;box-shadow:0 25px 70px #0009}.card h2{text-align:center;font-size:29px;font-weight:400;margin:0 0 9px}.small{font-size:14px;opacity:.68}.center{text-align:center}
+.btn{border:0;border-radius:999px;background:#351d39;color:#fff;padding:14px 23px;font:inherit;cursor:pointer}.btn.light{background:#fff;color:#351d39}
+.quote{background:#f3dce7;border-radius:20px;padding:23px;text-align:center;font-size:20px;line-height:1.8;margin:20px 0}
+.hidden{display:none!important}
+.gift-grid,.choice-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:13px;margin-top:23px}
+.giftbox,.choice,.note,.chapter{border:0;border-radius:19px;padding:21px 13px;background:#f3e2eb;color:#351d39;font:inherit;cursor:pointer;min-height:125px;transition:.2s}
+.giftbox:hover,.choice:hover,.note:hover,.chapter:hover{transform:translateY(-3px);background:#ead0df}
+.giftbox b{display:block;margin:8px 0}.giftbox span{font-size:13px;opacity:.7}
+.result{display:none;margin-top:20px;padding:22px;border-radius:20px;background:#6e315e;color:#fff;text-align:center;font-size:18px;line-height:1.8}.result.show{display:block;animation:fade .45s}
+.distance{text-align:center;margin:28px 0;font-size:17px;letter-spacing:1px}.distance .line{display:block;margin:13px 0;opacity:.75}
+.chapters{display:grid;gap:12px}.chapter{text-align:left;min-height:auto}
+.secret{display:flex;gap:10px;max-width:520px;margin:20px auto}.secret input{flex:1;padding:14px;border:1px solid #d7bdcc;border-radius:13px;font:inherit}
+.final{background:linear-gradient(135deg,#6e315e,#9b4d78);color:#fff;text-align:center;border-radius:25px;padding:35px 21px;font-size:20px;line-height:1.8;margin-top:22px}.heart{font-size:48px}
+.pocket{font-size:13px;opacity:.8;margin-top:13px}
+#holdTimer{font-size:18px;margin-top:13px}
+.float{position:fixed;bottom:-30px;z-index:10;pointer-events:none;animation:rise 6s linear forwards}
+@keyframes fade{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}@keyframes rise{to{transform:translateY(-110vh);opacity:0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+<div class="eyebrow">A LITTLE SOMETHING FROM NIKHIL</div>
+<h1>12:00 AM</h1>
+<p>You weren't supposed to get anything tonight.<br>But I wanted to leave something here for you. ❤️</p>
+</header>
+
+<section class="card center" id="start">
+<div class="heart">♡</div>
+<h2>It's waiting for you.</h2>
+<p class="small">Open it when the clock says 12:00 AM.</p>
+<button class="btn" onclick="begin()">Tap to open ❤️</button>
+</section>
+
+<main id="gift" class="hidden">
+
+<section class="card">
+<div class="center">
+<h2>Darlooo,</h2>
+<p class="small">A little piece of me, left here for you.</p>
+</div>
+<div class="quote">
+Pata nahi kyun, but tonight I really wanted you to have a little piece of me with you.<br><br>
+Main tere paas nahi hoon ki bas tere side mein baith jaun, tera haath pakad lun, ya bina kuch bole tere saath reh sakun.<br><br>
+Isliye socha… <b>thoda sa Nikhil yahin chhod deta hoon. ❤️</b><br><br>
+No big words. No expectations. No reason needed.
+</div>
+<div class="quote">
+<b>Bas ek reminder:</b><br><br>
+Distance sirf itna decide kar sakta hai ki main tujhe kitni door se hug kar sakta hoon.<br><br>
+<b>Ye nahi decide kar sakta ki tu mere kitne paas hai. 🫂</b>
+</div>
+</section>
+
+<section class="card">
+<h2>🌙 Right Now, Somewhere…</h2>
+<p class="center small">For a moment, forget the distance.</p>
+<div class="distance">Darloo 🌙 <span class="line">──────── ❤️ ────────</span> Nikhil 🌙</div>
+<div class="quote">Somewhere, Darloo is reading this.<br>Somewhere, Nikhil is wishing he could be sitting beside her.<br><br><b>And somewhere between these two places… there's still an “us”. ❤️</b></div>
+<p class="center"><b>Not close enough to touch.<br>Close enough to love.</b></p>
+</section>
+
+<section class="card">
+<h2>🕯️ If You Were Here…</h2>
+<p class="center small">Three things I wish I could give you tonight.</p>
+<div class="gift-grid">
+<button class="giftbox" onclick="openBox(0)">🫂<br><b>Something to Hold</b><span>Open me</span></button>
+<button class="giftbox" onclick="openBox(1)">💌<br><b>Something to Hear</b><span>Open me</span></button>
+<button class="giftbox" onclick="openBox(2)">✨<br><b>Something to Keep</b><span>Open me</span></button>
+</div>
+<div id="boxResult" class="result"></div>
+<div id="holdArea" class="center hidden"><button class="btn" onclick="holdHug()">🫂 Hold for 5 seconds</button><div id="holdTimer"></div></div>
+<div id="keepArea" class="center hidden"><button class="btn" onclick="keepIt()">❤️ Put it in my pocket</button><div id="pocket" class="pocket"></div></div>
+<div id="threeDone" class="result"></div>
+</section>
+
+<section class="card">
+<h2>💌 Things I Never Say Enough</h2>
+<p class="center small">Open these slowly. One at a time. ❤️</p>
+<div class="choice-grid">
+<button class="note" onclick="note(0)">🌸<br>Something I adore</button>
+<button class="note" onclick="note(1)">🌱<br>Something you changed</button>
+<button class="note" onclick="note(2)">🥺<br>Something I miss</button>
+<button class="note" onclick="note(3)">🙏🏻<br>Something I'm grateful for</button>
+<button class="note" onclick="note(4)">❤️<br>Something to remember</button>
+</div>
+<div id="noteResult" class="result"></div>
+</section>
+
+<section class="card">
+<h2>🫂 If I Were Beside You…</h2>
+<p class="center small">You decide what happens first.</p>
+<div class="choice-grid">
+<button class="choice" onclick="scene(0)">🫂 Hug me</button>
+<button class="choice" onclick="scene(1)">🤝 Hold my hand</button>
+<button class="choice" onclick="scene(2)">👀 Just look at me</button>
+<button class="choice" onclick="scene(3)">💋 Kiss me</button>
+<button class="choice" onclick="scene(4)">🗣️ Talk to me</button>
+<button class="choice" onclick="scene(5)">🤫 Sit quietly with me</button>
+</div>
+<div id="sceneResult" class="result"></div>
+</section>
+
+<section class="card">
+<h2>🥹 Proof That I Know You</h2>
+<p class="center small">Choose what makes you feel most loved.</p>
+<div class="choice-grid">
+<button class="choice" onclick="quiz('words')">💌 Words</button>
+<button class="choice" onclick="quiz('time')">🫶🏻 Time together</button>
+<button class="choice" onclick="quiz('actions')">🌸 Little actions</button>
+<button class="choice" onclick="quiz('touch')">🫂 Affection</button>
+</div>
+<div id="quizResult" class="result"></div>
+</section>
+
+<section class="card">
+<h2>📖 Our Story — Next Chapter</h2>
+<p class="center small">Not memories. Things I hope we get to live.</p>
+<div class="chapters">
+<button class="chapter" onclick="chapter(0)">Chapter 01 — The next time I see you</button>
+<button class="chapter" onclick="chapter(1)">Chapter 02 — A random Sunday</button>
+<button class="chapter" onclick="chapter(2)">Chapter 03 — Years later</button>
+</div>
+<div id="chapterResult" class="result"></div>
+</section>
+
+<section class="card">
+<h2>⏳ Until We Meet Again</h2>
+<div class="quote">This screen won't always have to be a substitute for a hug.<br><br>I won't have to type “I wish you were here.”<br><br>One day, I'll just reach for your hand.<br><br><b>DISTANCE: Temporary<br>US: Permanent ❤️</b></div>
+</section>
+
+<section class="card">
+<h2>🔐 One Last Secret</h2>
+<p class="center small">Hint: What do I call you?</p>
+<div class="secret"><input id="secretInput" placeholder="Enter the answer"><button class="btn" onclick="unlock()">Unlock ❤️</button></div>
+<div id="secretResult" class="result"></div>
+</section>
+
+<section class="card">
+<div class="final">
+<div class="heart">❤️</div>
+<b>You've reached the end.</b><br><br>
+This website ends here.<br>
+<b>My effort doesn't.</b><br><br>
+So whenever you think I've run out of ways to love you…<br>
+<b>give me another day.</b><br><br>
+I'll come up with something new.<br><br>
+<button class="btn light" onclick="tomorrow()">♡ Come back tomorrow</button>
+<div id="tomorrowResult"></div>
+</div>
+</section>
+
+</main>
+</div>
+
+<script>
+function begin(){document.getElementById("start").classList.add("hidden");document.getElementById("gift").classList.remove("hidden");floatHearts()}
+const opened=[false,false,false];
+function openBox(i){
+ const m=[
+ "If I could reach through this screen right now… I wouldn't say anything. I'd just pull you close, hold you for a little longer than usual, and let you stay there. ❤️",
+ "If you could hear me right now, I'd simply say: “Darloo… I'm here. I'm yours. And distance doesn't change that.” ❤️",
+ "KEEP THIS. For a day when you miss me, a day when things feel heavy, or simply a day when you need a reminder: there is someone in this world who chose you, and keeps choosing you. That someone is Nikhil. ❤️"
+ ];
+ opened[i]=true; document.getElementById("boxResult").innerHTML=m[i];document.getElementById("boxResult").classList.add("show");
+ document.getElementById("holdArea").classList.toggle("hidden",i!==0);document.getElementById("keepArea").classList.toggle("hidden",i!==2);
+ if(opened.every(Boolean))document.getElementById("threeDone").innerHTML="You opened all three. ❤️<br><br><b>But there's one thing I couldn't put inside these boxes: my presence.</b><br><br>Until I can actually sit beside you, keep a little piece of me here.";document.getElementById("threeDone").classList.add("show")
+}
+function holdHug(){let t=document.getElementById("holdTimer"),n=5;t.textContent="Holding you… "+n;let x=setInterval(()=>{n--;t.textContent=n>0?"Holding you… "+n:"Okay… you can let go now. But I didn't want to. 🥹❤️";if(n<=0)clearInterval(x)},1000)}
+function keepIt(){document.getElementById("keepArea").classList.add("hidden");document.getElementById("pocket").textContent="❤️ Kept safely. Still yours."}
+function note(i){const a=["I adore the way you make ordinary moments feel like they matter. ❤️","You've changed the way I understand what it means to feel at home with someone. 🌱","I miss the little things most — your voice, your random thoughts, and simply having you around. 🥺","I'm grateful that out of all the people in the world, somehow I got you. 🙏🏻❤️","You're much more important to me than I probably manage to say. Please never forget that. ❤️"];show("noteResult",a[i])}
+function scene(i){const a=["I'd pull you into the longest hug and probably refuse to let go first. 🫂❤️","I'd take your hand like it belongs there and just keep holding it. 🤝","I'd look at you for a few seconds and smile because I finally get to see you in front of me. 🥹","I'd give you a soft kiss and then smile like an idiot. 💋❤️","I'd listen to every little thing you wanted to tell me, even the random stuff. 🫶🏻","I'd sit right beside you, shoulder against yours, and let the silence feel comfortable. 🌙"];show("sceneResult",a[i])}
+function quiz(x){const a={words:"My answer: you deserve to hear it, but I want my actions to say it too. ❤️",time:"My answer: time together — because with you, even doing nothing feels like something. 🫶🏻",actions:"My answer: the tiny things matter most, and those are the things I want to keep noticing. 🌸",touch:"My answer: come here then. Your hug is already overdue. 🫂❤️"};show("quizResult",a[x])}
+function chapter(i){const a=["The next time I see you, I won't need a screen. I'll just smile, reach for you, and hold you for way too long. 🫂","A random Sunday: messy hair, food we didn't plan, stupid conversations, nowhere we need to be. Perfect. ❤️","Years later: still calling you Darloo, still annoying you, still finding new reasons to choose you. ♾️❤️"];show("chapterResult",a[i])}
+function unlock(){const v=document.getElementById("secretInput").value.trim().toLowerCase();show("secretResult",v==="darloo"?"ACCESS GRANTED ❤️<br><br>You are, and probably always will be, my favourite person to come home to.":"Hmm… that's not what Nikhil calls you. 🥹")}
+function tomorrow(){document.getElementById("tomorrowResult").innerHTML="<br><br><b>I'll be here with something new. ❤️</b>"}
+function show(id,text){const e=document.getElementById(id);e.innerHTML=text;e.classList.add("show")}
+function floatHearts(){for(let i=0;i<24;i++){const e=document.createElement("div");e.className="float";e.textContent=["❤️","♡","✨","🫶🏻"][Math.floor(Math.random()*4)];e.style.left=Math.random()*100+"vw";e.style.fontSize=(16+Math.random()*24)+"px";e.style.animationDelay=Math.random()*1.5+"s";document.body.appendChild(e);setTimeout(()=>e.remove(),6500)}}
+</script>
+</body></html>
